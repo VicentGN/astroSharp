@@ -18,9 +18,6 @@ namespace astroSharp
     [JsonPropertyName("inclination")]
     public float Inclination {get; set;}
 
-    // [JsonPropertyName("mass.massValue")]
-    // public float Mass {get; set;}
-
     [JsonPropertyName("density")]
     public float Density {get; set;}
 

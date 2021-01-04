@@ -1,6 +1,6 @@
 # AstroSharp
 
-Permite obtener información sobre diferentes cuerpos o astros celestes. Primera aplicación desarrollada en entorno .NET bajo lenguaje C#
+Permite obtener información sobre diferentes cuerpos o astros celestes. Primera aplicación desarrollada en entorno .NET usando lenguaje C#
 
 ## Requisitos previos
 Las siguientes aplicaciones y/o dependencias deben estar instaladas en el ordenador:
