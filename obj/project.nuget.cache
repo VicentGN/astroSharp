@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/vhUDhWEs4P1lD+8ftGcxa7hE1yJB3EICmSvTVTiCuzBAr1c8HjwP+FTXSiytVDKabUJmpXXiwDnAvW9xrpOcQ==",
+  "success": true,
+  "projectFilePath": "/home/vicent/Documentos/Proyectos/probandoNet/astroSharp/astroSharp.csproj",
+  "expectedPackageFiles": [
+    "/home/vicent/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
