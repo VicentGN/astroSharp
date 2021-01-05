@@ -36,7 +36,7 @@ namespace astroSharp
             {
               while (!volverAtras)
               {
-                Console.WriteLine("Seleccione una opción:\n[1] Obtener información básica\n[2] Afelio y Perihelio\n[3] Rotación sideral\n[4] Volver al menú principal");
+                Console.WriteLine("Seleccione una opción:\n[1] Obtener información básica\n[2] Medidas\n[3] Órbitas y posiciones\n[4] Volver al menú principal");
                 opcionMenuBody = Console.ReadLine();
                 switch (opcionMenuBody)
                 {
@@ -44,10 +44,10 @@ namespace astroSharp
                     printBasicInfo(body);
                     break;
                   case "2":
-                    printAphelionAndPerihelion(body);
+                    printMeasurements(body);
                     break;
                   case "3":
-                    printSideralRotation(body);
+                    printOrbitsPositions(body);
                     break;
                   case "4":
                     // Subir de nivel
@@ -78,23 +78,43 @@ namespace astroSharp
     {
       Console.WriteLine("**************************");
       Console.WriteLine("*** Información Básica ***");
-      Console.WriteLine($"ID: {body.Id}\nNombre: {body.Name}\nInclinación: {body.Inclination}º\nDensidad: {body.Density} g/cm3\nGravedad: {body.Gravity} m/s2");
+      Console.WriteLine($"ID: {body.Id}\nNombre: {body.Name}\nTipo: {(body.isPlanet ? "Planeta" : "Otro Astro")}\n{(body.isPlanet ? "Satélites: " + getListMoon(body.Moons) : body.AroundPlanet != null ? "Pertenece a: " + body.AroundPlanet.planet : "No pertenece a ningún planeta")}");
       Console.WriteLine("**************************");
     }
 
-    public static void printAphelionAndPerihelion(Body body)
+    public static String getListMoon(List<astroSharp.Moon> MoonsList) {
+      string moons = "";
+
+      if (MoonsList != null) {
+
+        foreach(var moon in MoonsList) {
+          if (MoonsList.IndexOf(moon) == MoonsList.Count - 1) {
+            moons += $"{moon.moon}.";
+          } else {
+            moons += $"{moon.moon}, ";
+          }
+        }
+
+      } else {
+        moons = "No se le conocen satélites";
+      }
+
+      return moons;
+    }
+
+    public static void printMeasurements(Body body)
     {
       Console.WriteLine("*******************");
-      Console.WriteLine("*** Translación ***");
-      Console.WriteLine($"Afelio: {body.Aphelion} Km.\nPerihelio: {body.Perihelion} Km.");
+      Console.WriteLine("*** Medidas ***");
+      Console.WriteLine($"Semiaxis Mayor: {body.SemiMajorAxis} Km.\nRadio Polar: {body.PolarRadius} Km.\nRadio Ecuatorial: {body.EquatorialRadius} Km.\nDensidad: {body.Density} g/cm3\nGravedad: {body.Gravity}m/s2");
       Console.WriteLine("*******************");
     }
 
-    public static void printSideralRotation(Body body)
+    public static void printOrbitsPositions(Body body)
     {
       Console.WriteLine("******************");
-      Console.WriteLine("*** Rotaciones ***");
-      Console.WriteLine($"Rotación Sideral: {body.SideralRotation} horas.");
+      Console.WriteLine("*** Órbitas y Posiciones ***");
+      Console.WriteLine($"Afelio {body.Aphelion} Km.\nPerihelio: {body.Perihelion} Km.\nExcentricidad: {body.Eccentricity}\nInclinación: {body.Inclination}º\nTraslación: {body.SideralOrbit} días\nRotación sideral: {body.SideralRotation} horas");
       Console.WriteLine("*******************");
     }
 
