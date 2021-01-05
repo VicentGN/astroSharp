@@ -8,7 +8,6 @@ namespace astroSharp
   {
     static async Task Main(string[] args)
     {
-
       string opcionPrincipal = "";
       string opcionMenuBody = "";
       bool salirPrograma = false;
@@ -82,20 +81,28 @@ namespace astroSharp
       Console.WriteLine("**************************");
     }
 
-    public static String getListMoon(List<astroSharp.Moon> MoonsList) {
+    public static String getListMoon(List<astroSharp.Moon> MoonsList)
+    {
       string moons = "";
 
-      if (MoonsList != null) {
+      if (MoonsList != null)
+      {
 
-        foreach(var moon in MoonsList) {
-          if (MoonsList.IndexOf(moon) == MoonsList.Count - 1) {
+        foreach (var moon in MoonsList)
+        {
+          if (MoonsList.IndexOf(moon) == MoonsList.Count - 1)
+          {
             moons += $"{moon.moon}.";
-          } else {
+          }
+          else
+          {
             moons += $"{moon.moon}, ";
           }
         }
 
-      } else {
+      }
+      else
+      {
         moons = "No se le conocen satélites";
       }
 
@@ -106,7 +113,7 @@ namespace astroSharp
     {
       Console.WriteLine("*******************");
       Console.WriteLine("*** Medidas ***");
-      Console.WriteLine($"Semiaxis Mayor: {body.SemiMajorAxis} Km.\nRadio Polar: {body.PolarRadius} Km.\nRadio Ecuatorial: {body.EquatorialRadius} Km.\nDensidad: {body.Density} g/cm3\nGravedad: {body.Gravity}m/s2");
+      Console.WriteLine($"Semiaxis Mayor: {body.SemiMajorAxis} Km.\nRadio Polar: {body.PolarRadius} Km.\nRadio Ecuatorial: {body.EquaRadius} Km.\nDensidad: {body.Density} g/cm3\nGravedad: {body.Gravity}m/s2");
       Console.WriteLine("*******************");
     }
 

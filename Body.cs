@@ -30,7 +30,7 @@ namespace astroSharp
     public double PolarRadius { get; set; }
 
     [JsonPropertyName("equaRadius")]
-    public bool EquatorialRadius { get; set; }
+    public double EquaRadius { get; set; }
 
     [JsonPropertyName("density")]
     public float Density { get; set; }
