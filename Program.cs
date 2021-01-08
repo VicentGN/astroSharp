@@ -27,7 +27,7 @@ namespace astroSharp
 
             Console.WriteLine("Introduzca el ID de un cuerpo celeste listado arriba:");
             string bodySelected = Console.ReadLine();
-            Console.WriteLine($"Ha seleccionado {bodySelected}. Buscando información en red...");
+            Console.WriteLine($"Ha seleccionado {bodySelected}. Buscando información en red, espere un momento...");
             // Aquí se prepara la llamada al servidor...
             var body = await bodyLoader.getBodyInfo(bodySelected);
 
